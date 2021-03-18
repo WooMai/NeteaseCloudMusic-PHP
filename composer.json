@@ -1,0 +1,24 @@
+{
+    "name": "woomai/netease-cloud-music",
+    "type": "library",
+    "require": {
+        "php-64bit": "^8.0",
+        "ext-bcmath": "*",
+        "ext-openssl": "*",
+        "phpseclib/phpseclib": "~3.0",
+        "ircmaxell/random-lib": "^1.2",
+        "guzzlehttp/guzzle": "^7.2",
+        "mlocati/ip-lib": "^1.14"
+    },
+    "authors": [
+        {
+            "name": "WooMai",
+            "email": "woomai@wmlabs.net"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "WooMaiLabs\\NeteaseCloudMusic\\": "src/"
+        }
+    }
+}
