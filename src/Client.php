@@ -10,11 +10,11 @@ class Client
 {
     /**
      * Login to Netease Cloud Music
-     * @param string $md5_password
+     * @param string $md5_password Password after MD5 hashing
      * @param string|null $email
      * @param int|null $phone
      * @param int $phone_country_code
-     * @return string MUSIC_U Cookie
+     * @return string MUSIC_U Cookie (without 'MUSIC_U=' prefix)
      * @throws Exception
      */
     public static function login(string $md5_password, ?string $email = null, ?int $phone = null, int $phone_country_code = 86): string
@@ -60,13 +60,21 @@ class Client
 
     /**
      * Client constructor.
-     * @param string|null $music_u
+     * @param string|null $music_u MUSIC_U Cookie (without 'MUSIC_U=' prefix)
      * @param bool $raw_response Get Raw ResponseInterface from NCM API
      */
     public function __construct(protected ?string $music_u = null, protected bool $raw_response = false)
     {
     }
 
+    /**
+     * @param string $keyword Search keyword
+     * @param int $type 1/单曲(default), 10/专辑, 100/歌手, 1000/歌单, 1002/用户, 1004/MV, 1006/歌词, 1009/电台, 1014/视频, 1018/综合
+     * @param int $limit Maximum returned results
+     * @param int $offset Result offset
+     * @return string|\Psr\Http\Message\ResponseInterface
+     * @throws \Exception
+     */
     public function search(string $keyword, int $type = 1, int $limit = 30, int $offset = 0): string|ResponseInterface
     {
         $req = new NcmRequest('https://music.163.com/weapi/search/get', 'weapi', $this->music_u);

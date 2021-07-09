@@ -1,5 +1,7 @@
 {
     "name": "woomai/netease-cloud-music",
+    "version": "1.0.0",
+    "license": "MIT",
     "type": "library",
     "require": {
         "php-64bit": "^8.0",

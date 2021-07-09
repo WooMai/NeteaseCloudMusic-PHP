@@ -14,8 +14,6 @@ use WooMaiLabs\NeteaseCloudMusic\Utils\WebAPI;
 
 class NcmRequest
 {
-    protected static $linuxapi_key = '';
-
     protected $headers = [];
 
     protected $guzzle;
