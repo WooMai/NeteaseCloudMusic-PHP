@@ -58,7 +58,7 @@ class Random
             '223.112.0.0/12',
         ]);
 
-        $range = IPLibFactory::rangeFromString($cidr);
+        $range = IPLibFactory::parseRangeString($cidr);
 
         $start = ip2long(strval($range->getStartAddress()->getNextAddress()));
         $end = ip2long(strval($range->getEndAddress()->getPreviousAddress()));

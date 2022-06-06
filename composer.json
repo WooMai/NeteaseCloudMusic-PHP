@@ -9,8 +9,11 @@
         "ext-openssl": "*",
         "phpseclib/phpseclib": "~3.0",
         "ircmaxell/random-lib": "^1.2",
-        "guzzlehttp/guzzle": "^7.2",
+        "guzzlehttp/guzzle": "^7.4.3",
         "mlocati/ip-lib": "^1.14"
+    },
+    "require-dev": {
+        "jetbrains/phpstorm-attributes": "^1.0"
     },
     "authors": [
         {
